@@ -38,7 +38,7 @@
 **Autres**
 
 - Exemple de stack
-- Node.js + Express ou Nest + React + Vue
+- Node.js + Express + MySQL + React + Vue
 
 **À faire**
 
