@@ -1,7 +1,10 @@
 import React from "react";
 // import LandingPage from "./LandingPage";
 import "./styles.css";
-import MapPage from "./MapPage"
+// import MapPage from "./MapPage"
+import SignUp from "./Components/SignUp"
+import Footer from "./Components/Footer"
+import Navbar from "./Components/Navbar"
 
 // import React, { useState, useEffect, useRef } from "react";
 // import axios from "axios";
@@ -19,8 +22,11 @@ import MapPage from "./MapPage"
 function App() {
   return (
     <div className="App">
+      <Navbar />
+      <SignUp />
+      <Footer />
       {/* <LandingPage /> */}
-      <MapPage/>
+      {/* <MapPage/> */} 
     </div>
   );
 }
