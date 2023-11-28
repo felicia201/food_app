@@ -30,6 +30,7 @@ footer {
     padding: 50px;
     background-color: var(--darkOrange);
     color: rgb(255, 255, 255);
+    width: 100vw;
   }
   
   .column {
