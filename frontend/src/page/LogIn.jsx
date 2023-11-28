@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Input } from "./SignUp.jsx"
 import { OthersMethods } from "./SignUp.jsx"
-import Image1 from "/asset/Image1.jpg"
+import Image1 from "../../public/asset"
 import "../Styles/App.scss"
 
 function Connexion({ form, setForm, sendForm }){

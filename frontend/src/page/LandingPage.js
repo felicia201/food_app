@@ -3,11 +3,13 @@ import React from 'react';
 import SearchBar from '../Components/SearchBar';
 // import Carousel from './Components/Carousel';  // Assure-toi d'avoir un composant Carousel
 import '../Styles/landingpage.css'
+import Navbar from '../Components/layout/navbar/Navbar';
 
 
 const LandingPage = () => {
     return (
-
+        <div>
+            <Navbar/>
         <div className = "landing-page" >
          { /* Section 1 */ } 
         <div className = "section section-1" >
@@ -61,6 +63,7 @@ const LandingPage = () => {
              { /* Ajoute ici plusieurs ronds alignés contenant des images */ } 
              </div>
               </div> 
+        </div>
         </div>
     );
 }
