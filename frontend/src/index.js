@@ -8,7 +8,7 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <h1>restaurants map</h1>
+    {/* <h1>restaurants map</h1> */}
     <App />
   </StrictMode>
 );

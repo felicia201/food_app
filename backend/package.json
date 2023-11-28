@@ -10,7 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+=======
     "dotenv": "^16.3.1",
     "express": "^4.18.2"
+>>>>>>> 5f2a37bb3e0c22a30dcdd00015e2311f9a68d1ed
   }
 }

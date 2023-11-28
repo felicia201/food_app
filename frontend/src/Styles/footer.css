@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'PoliceContenu';
+  src: url('./DarkerGrotesque-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'PoliceTitre';
+  src: url('./DMSans-Regular.ttf'); 
+}
+
+:root{
+  --lightGreen : #61BD73;
+  --green : #429E55;
+  --darkGreen : #30733E;
+  --lightOrange : #DEA368;
+  --orange : #CB7C2D;
+  --darkOrange : #A76625;
+  --lightred : #DE5454;
+  --red : #CB2727;
+  --darkred : #9A1D1D;
+  --gray: #F2EEEE;
+  --greenAccept: #2EC82B;
+  --redDeny: #F91D0F;
+  --yellowTag: #F1F619;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: var(--darkOrange);
+    color: rgb(255, 255, 255);
+  }
+  
+  .column {
+    flex: 1;
+    margin-right: 20px;
+    padding: 10px;
+    /* background-color: #453223; */
+  }
+  
+  .column:last-child {
+    margin-right: 0;
+  }
+  
+  h4 {
+    margin-bottom: 10px;
+    font-family: 'PoliceTitre';
+  }
+  
+  ul {
+    list-style: none;
+    font-family: 'PoliceContenu';
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .social-icons {
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .social-icons li {
+    margin-right: 10px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  
+  
+  /* Ajoutez les styles spécifiques aux icônes de médias sociaux (FontAwesome) */
+  /* Vous devez inclure FontAwesome dans votre projet pour utiliser ces icônes */
+  /* Par exemple, vous pouvez ajouter cette ligne dans votre fichier HTML : */
+  /* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-Hnn16/q1n0gW4CuHTQ4V8cv65RNYLFn3LaqPVSbHjJskcFcfV3V8DWce+NW4r56C9vBKuZl5DIyWEqEt+R3vWg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> */
+  

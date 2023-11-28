@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'PoliceContenu';
+  src: url('./DarkerGrotesque-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'PoliceTitre';
+  src: url('./DMSans-Regular.ttf'); 
+}
+
+
+:root{
+  --lightGreen : #61BD73;
+  --green : #429E55;
+  --darkGreen : #30733E;
+  --lightOrange : #DEA368;
+  --orange : #CB7C2D;
+  --darkOrange : #A76625;
+  --lightred : #DE5454;
+  --red : #CB2727;
+  --darkred : #9A1D1D;
+  --gray: #F2EEEE;
+  --greenAccept: #2EC82B;
+  --redDeny: #F91D0F;
+  --yellowTag: #F1F619;
+}
+
+/* LandingPage.css */
+/* .landing-page {
+  /* Ajoute des styles généraux pour la landing page ici 
+} */
+
+/* Section 1 */
+.section-1 {
+  position: relative;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../sandwich.jpg'); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; 
+}
+
+/* Section 2 */
+.section-2 {
+  padding: 100px;
+  background-color: #f0f0f0; 
+}
+
+.section-2 h2 {
+  font-size: 2rem;
+  color: #333; 
+  font-family: 'PoliceTitre';
+  text-align: center;
+}
+
+.section-2 p {
+  font-size: 1.7rem;
+  color: #333; 
+  font-family: 'PoliceContenu';
+  text-align: center;
+}
+
+/* Section 3 */
+
+
+/* Section 4 */
+.section-4 {
+  position: relative;
+  height: 40vh; 
+  overflow: hidden;
+}
+
+.section-4 .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../sandwich.jpg'); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; 
+}
+
+.section-4 p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff; 
+  font-family: 'PoliceTitre';
+}
+
+/* Section 5 */
+.section-5 {
+  padding: 50px;
+  background-color: #e0e0e0; 
+  font-family: 'PoliceContenu';
+}
+
+.section-5 h2 {
+  font-size: 36px;
+  color: #333;
+  font-family: 'PoliceTitre';
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.card {
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  background-color: #fff; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  border-radius: 20px;
+  background-image: url('../sushi.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card h3 {
+  font-size: 40px;
+  color: #f5f5f5; 
+  font-family: 'PoliceTitre';
+}
+
+.card p {
+  font-size: 16px;
+  color: #fbfbfb; 
+  font-family: 'PoliceTitre';
+}
+
+/* Section 6 */
+.section-6 {
+  padding: 50px;
+  background-color: #f0f0f0; 
+}
+
+.section-6 h2 {
+  font-size: 36px;
+  color: #333; 
+  font-family: 'PoliceTitre';
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  overflow: hidden;
+  background-color: #2EC82B;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

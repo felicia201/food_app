@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'PoliceContenu';
+  src: url('./DarkerGrotesque-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'PoliceTitre';
+  src: url('./DMSans-Regular.ttf'); 
+}
+
+
+:root{
+  --lightGreen : #61BD73;
+  --green : #429E55;
+  --darkGreen : #30733E;
+  --lightOrange : #DEA368;
+  --orange : #CB7C2D;
+  --darkOrange : #A76625;
+  --lightred : #DE5454;
+  --red : #CB2727;
+  --darkred : #9A1D1D;
+  --gray: #F2EEEE;
+  --greenAccept: #2EC82B;
+  --redDeny: #F91D0F;
+  --yellowTag: #F1F619;
+}
+
+.search-bar {
+    /* margin: 18rem; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fcfcfc;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .search-bar input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'PoliceContenu';
+  }
+  
+  .search-bar select,
+  .search-bar button {
+    padding: 8px;
+    border: 1px solid #010101;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:var(--lightGreen);
+    font-family: 'PoliceContenu';
+
+  }
+  
+  .filter-list {
+    display: flex;
+  }
+  
+  .filter-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
