@@ -6,7 +6,7 @@ const BugTrackerRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
-
+                <Route></Route>
             </Routes>
         </BrowserRouter>
     )
