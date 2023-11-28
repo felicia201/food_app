@@ -7,7 +7,7 @@ const MiamApp = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route> path= "/pipi" element={<LandingPage/>}</Route>
+                <Route> path= "/" element={<LandingPage/>}</Route>
             </Routes>
         </BrowserRouter>
     )
