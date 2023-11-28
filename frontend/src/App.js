@@ -1,10 +1,7 @@
 import React from "react";
 // import LandingPage from "./LandingPage";
 import "./styles.css";
-// import MapPage from "./MapPage"
-import SignUp from "./Components/SignUp"
-import Footer from "./Components/Footer"
-import Navbar from "./Components/Navbar"
+import MapPage from "./MapPage"
 
 // import React, { useState, useEffect, useRef } from "react";
 // import axios from "axios";
@@ -16,17 +13,15 @@ import Navbar from "./Components/Navbar"
 // import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 // import Navbar from "./Components/Navbar";
 // import Footer from './Components/Footer';
-
-// 
+import LandingPage from "./page/LandingPage";
+import Navbar from "./Components/layout/navbar/Navbar"
+import Footer from './Components/layout/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <SignUp />
-      <Footer />
       {/* <LandingPage /> */}
-      {/* <MapPage/> */} 
+      <MapPage/>
     </div>
   );
 }
