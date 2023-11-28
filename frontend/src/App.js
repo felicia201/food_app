@@ -1,7 +1,7 @@
 import React from "react";
 // import LandingPage from "./LandingPage";
 import "./styles.css";
-import MapPage from "./MapPage"
+import MapPage from "./Components/page/MapPage"
 
 // import React, { useState, useEffect, useRef } from "react";
 // import axios from "axios";
@@ -17,12 +17,12 @@ import MapPage from "./MapPage"
 // 
 
 function App() {
-  return (
-    <div className="App">
-      {/* <LandingPage /> */}
-      <MapPage/>
-    </div>
-  );
+    return ( <
+        div className = "App" > { /* <LandingPage /> */ } <
+        MapPage / >
+        <
+        /div>
+    );
 }
 
 export default App;
