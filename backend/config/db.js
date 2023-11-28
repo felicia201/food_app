@@ -1,10 +1,19 @@
 //installer mysql via : npm install mysql
 const mysql = require('mysql')
+    //installer dotenv via : npm dotenv
+require('dotenv').config(); // Charge les variables d'environnement depuis le fichier .env
+
+// Utilisation des variables
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
+
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'nom_de_la_base'
+    host: dbHost,
+    user: dbUser,
+    password: dbPassword,
+    database: dbName
 });
 
 

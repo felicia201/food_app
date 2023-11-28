@@ -1,6 +1,6 @@
 const express = require("express");
+const db = require("../../config/db");
 const router = new express.Router();
-connection = require("../../config/db");
 
 //CRUD CREATION RESTAURANT
 
