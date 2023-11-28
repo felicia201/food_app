@@ -1,15 +1,16 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import LandingPage from "../../page/LandingPage";
 
 // import les page ici !!!
 
-const BugTrackerRouter = () => {
+const MiamApp = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route></Route>
+                <Route> path= "/pipi" element={<LandingPage/>}</Route>
             </Routes>
         </BrowserRouter>
     )
 }
 
-export default BugTrackerRouter;
+export default MiamApp;
