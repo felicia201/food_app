@@ -3,7 +3,6 @@ const db = require("../../config/db");
 const router = new express.Router();
 
 //CRUD CREATION MENU
-// JE NE DOIS PAS LAISSER MON ORDINATEUR ALLUMé
 
 // GET /restaurants/:restaurantId/menus : Récupérer tous les menus d'un restaurant spécifique.
 
