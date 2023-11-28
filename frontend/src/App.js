@@ -1,8 +1,7 @@
 import React from "react";
 // import LandingPage from "./LandingPage";
 import "./styles.css";
-import MapPage from "./Components/page/MapPage"
-
+import MapPage from "./Components/page/MapPage";
 // import React, { useState, useEffect, useRef } from "react";
 // import axios from "axios";
 // import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -17,12 +16,12 @@ import MapPage from "./Components/page/MapPage"
 // 
 
 function App() {
-    return ( <
-        div className = "App" > { /* <LandingPage /> */ } <
-        MapPage / >
-        <
-        /div>
-    );
+  return (
+    <div className="App">
+      {/* <LandingPage /> */}
+      <MapPage/>
+    </div>
+  );
 }
 
 export default App;
