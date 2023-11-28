@@ -1,7 +1,7 @@
 import React from "react";
 // import LandingPage from "./LandingPage";
 import "./styles.css";
-import MapPage from "./Components/page/MapPage";
+// import MapPage from "./Components/page/MapPage";
 // import React, { useState, useEffect, useRef } from "react";
 // import axios from "axios";
 // import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -12,14 +12,19 @@ import MapPage from "./Components/page/MapPage";
 // import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 // import Navbar from "./Components/Navbar";
 // import Footer from './Components/Footer';
-
-// 
+import LandingPage from "./page/LandingPage";
+import Navbar from "./Components/layout/navbar/Navbar"
+import Footer from './Components/layout/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      {/* <LandingPage /> */}
-      <MapPage/>
+
+      
+      <Navbar/>
+      <LandingPage />
+      {/* <MapPage/> */}
+      <Footer/>
     </div>
   );
 }
