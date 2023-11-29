@@ -20,11 +20,11 @@ function Navbar() {
 				<Link to="/">
   					<a>Accueil</a>
 				</Link>
-				<Link to="/produits">
+				<Link to="/products">
   					<a>Produits</a>
 				</Link>
 				<a href="/#">Partenariat</a>
-				<Link to="/connexion">
+				<Link to="/login">
   					<a>Connexion</a>
 				</Link>
 				<button
