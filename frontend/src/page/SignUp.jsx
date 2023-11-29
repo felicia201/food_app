@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Image1 from "../Images/Image1.jpg"
+// import Image1 from "../Images/Image1.jpg"
 import "../Styles/App.scss"
 
 export function Input({ type, id, label, form, setForm}){
@@ -60,7 +60,7 @@ function Inscription({ form, setForm, sendForm}){
                     <Input type="password" id="confirm" label="Confirmer le mot de passe" form={form} setForm={setForm}/>
                     <Input type="text" id="phone" label="Numéro de téléphone" form={form} setForm={setForm}/>
                     <div className="links">
-                        <a href="/" id="login">Déjà inscrit? Connectez-vous</a>
+                        <a href="/login" id="login">Déjà inscrit? Connectez-vous</a>
                     </div>
                     <input type="submit" value="S'inscrire" />
                 </form>
@@ -73,7 +73,7 @@ function Inscription({ form, setForm, sendForm}){
 function BackgroundImage(){
     return (
         <div className="background">
-            <img src={Image1} alt="BackgroundImages" id="background"/>
+            <img src="/asset/Image1.jpg" alt="BackgroundImages" id="background"/>
         </div>
     )
 }

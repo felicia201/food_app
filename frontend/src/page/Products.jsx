@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Image from "/asset/Hamburger.jpg"
+// import Image from "/asset/Hamburger.jpg"
 import "../Styles/App.scss"
 
 
@@ -48,9 +48,9 @@ function Filters(){
 
 function Product(){
     return (
-    <a href="/product/">
+    <a href="/details">
         <div className="product">
-            <img src={Image.src} alt="Produit" width="250px" height="250px"/>
+            <img src="/asset/Hamburger.jpg" alt="Produit" width="250px" height="250px"/>
             <div>
                 <div className="content">
                     <div className="left">
@@ -111,7 +111,6 @@ function Nav(){
 export default function Products() {
   return (
     <div>
-        <header></header>
         <div className="products">
             <Filters />
             <AllProducts />
@@ -120,7 +119,6 @@ export default function Products() {
             <AllProducts />
             <ProductsNav /> */}
         </div>
-        <footer></footer>
     </div>
   )
 }

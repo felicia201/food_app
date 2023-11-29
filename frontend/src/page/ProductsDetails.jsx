@@ -1,13 +1,13 @@
 import React from 'react'
-import Image from "/asset/Hamburger.jpg"
-import Image2 from "/asset/Hamburger 2.jpg"
-import Localisation from "/asset/localisateur.png"
+// import Image from "/asset/Hamburger.jpg"
+// import Image2 from "/asset/Hamburger 2.jpg"
+// import Localisation from "/asset/localisateur.png"
 import "../Styles/App.scss"
 
 function Banner(){
     return (
         <div className="banner">
-            <img src={Image.src} alt="Banner" id="banner"/>
+            <img src="/asset/Hamburger.jpg" alt="Banner" id="banner"/>
         </div>
     )
 }
@@ -37,7 +37,7 @@ function Details(){
     return (
         <div className="details">
             <div className="left">
-                <img src={Image.src} alt="Banner" id="details"/>
+                <img src="/asset/Hamburger.jpg" alt="Banner" id="details"/>
                 
                 <div className="notes">
                     <Notes />
@@ -86,7 +86,7 @@ function Modalities(){
         <div className="modalities">
             <div>
                 <div className="top">
-                    <span><img src={Localisation.src} alt="alt" width="25px" height="25px"/> 9 Avenue du Vieux Duc</span>
+                    <span><img src="/asset/localisateur.png" alt="alt" width="25px" height="25px"/> 9 Avenue du Vieux Duc</span>
                     <button>Enregistrer</button>
                 </div>
                 <div className="bottom">
@@ -129,9 +129,9 @@ function Comments(){
 function Images(){
     return (
         <div className="places">
-            <img src={Image2.src} alt="Place" className="place"/>
-            <img src={Image2.src} alt="Place" className="place"/>
-            <img src={Image2.src} alt="Place" className="place"/>
+            <img src="/asset/Hamburger 2.jpg" alt="Place" className="place"/>
+            <img src="/asset/Hamburger 2.jpg" alt="Place" className="place"/>
+            <img src="/asset/Hamburger 2.jpg" alt="Place" className="place"/>
         </div>
     )
 }
@@ -146,7 +146,6 @@ function Reinsurance(){
 export default function DetailsOfProducts() {
   return (
     <>
-        <header></header>
         <div className="detailsofproducts">
             <Banner />
             <Details />
@@ -155,7 +154,6 @@ export default function DetailsOfProducts() {
             <Images />
             <Reinsurance />
         </div>
-        <footer></footer>
     </>
   )
 }

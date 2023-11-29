@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Input } from "./SignUp.jsx"
 import { OthersMethods } from "./SignUp.jsx"
-import Image1 from "../../public/asset"
+// import Image1 from "../../public/asset"
 import "../Styles/App.scss"
 
 function Connexion({ form, setForm, sendForm }){
@@ -13,10 +13,10 @@ function Connexion({ form, setForm, sendForm }){
                 <Input type="text" id="email" label="Adresse mail" form={form} setForm={setForm}/>
                 <Input type="password" id="password" label="Mot de passe" form={form} setForm={setForm}/>
                 <div className="links">
-                    <a href="/resetpassword/" id="forgotten-password">Mot de passe oublié</a>
-                    <a href="/signup/" id="signup">Inscrivez-vous</a>
+                    <a href="/resetpassword" id="forgotten-password">Mot de passe oublié</a>
+                    <a href="/signup" id="signup">Inscrivez-vous</a>
                 </div>
-                <input type="submit" value="Se connecter" />
+                <input type="submit" value="Se connecter" onClick={() => window.location.href="/products"}/>
             </form>
             <OthersMethods />
             </div>
@@ -27,7 +27,7 @@ function Connexion({ form, setForm, sendForm }){
 function BackgroundImage(){
     return (
         <div className="background">
-            <img src={Image1.src} alt="BackgroundImages" id="background"/>
+            <img src="/asset/Image1.jpg" alt="BackgroundImages" id="background"/>
         </div>
     )
 }
@@ -45,12 +45,10 @@ export default function LogIn() {
       
   return (
     <>
-        <header></header>
         <div className="login">
             <BackgroundImage />
             <Connexion form={form} setForm={setForm} sendForm={(e) => sendForm(e,form)} />
         </div>
-        <footer></footer>
     </>
   )
 }
