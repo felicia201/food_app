@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Input } from "./SignUp.jsx"
 import { OthersMethods } from "./SignUp.jsx"
-import Image1 from "../../public/asset"
 import "../Styles/App.scss"
 
 function Connexion({ form, setForm, sendForm }){
@@ -24,13 +23,13 @@ function Connexion({ form, setForm, sendForm }){
     )
 }
 
-function BackgroundImage(){
-    return (
-        <div className="background">
-            <img src={Image1.src} alt="BackgroundImages" id="background"/>
-        </div>
-    )
-}
+// function BackgroundImage(){
+//     return (
+//         <div className="background">
+//             <img src={Image1.src} alt="BackgroundImages" id="background"/>
+//         </div>
+//     )
+// }
 
 export default function LogIn() {
     const [form, setForm] = useState({
@@ -47,7 +46,7 @@ export default function LogIn() {
     <>
         <header></header>
         <div className="login">
-            <BackgroundImage />
+            {/* <BackgroundImage /> */}
             <Connexion form={form} setForm={setForm} sendForm={(e) => sendForm(e,form)} />
         </div>
         <footer></footer>

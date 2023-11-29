@@ -8,11 +8,12 @@
 **Frontend**
 
 - React
-- [Vue]
+- Vue
+- Astro
 
 **Backend**
 
-- (JS) [Node.js] - [Express] / [NestJS]
+- (JS) [Node.js] - [Express]
 - [Firebase]
 
 **Ops et bases de données**
@@ -24,7 +25,6 @@
 
 - [Markdown]
 - JSON
-- [CI/CD]
 - Axios
 - React Router
 

@@ -5,39 +5,45 @@ import '../../../Styles/header.css';
 
 
 function Navbar() {
-	const navRef = useRef();
+    const navRef = useRef();
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
-	};
+    const showNavbar = () => {
+        navRef.current.classList.toggle(
+            "responsive_nav"
+        );
+    };
 
-	return (
-		<header>
-			<h3>MiamApp</h3>
-			<nav ref={navRef}>
-				<Link to="/">
-  					<a>Accueil</a>
-				</Link>
-				<Link to="/produits">
-  					<a>Produits</a>
-				</Link>
-				<a href="/#">Partenariat</a>
-				<a href="/#">Connexion</a>
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
-			<button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button>
-		</header>
-	);
+    return ( <
+        header >
+        <
+        h3 > MiamApp < /h3> <
+        nav ref = { navRef } >
+        <
+        Link to = "/" >
+        <
+        a > Accueil < /a> < /
+        Link > <
+        Link to = "/produits" >
+        <
+        a > Produits < /a> < /
+        Link > <
+        a href = "/#" > Partenariat < /a> <
+        a href = "/#" > Connexion < /a> <
+        button className = "nav-btn nav-close-btn"
+        onClick = { showNavbar } >
+        <
+        FaTimes / >
+        <
+        /button> < /
+        nav > <
+        button className = "nav-btn"
+        onClick = { showNavbar } >
+        <
+        FaBars / >
+        <
+        /button> < /
+        header >
+    );
 }
 
 export default Navbar;
