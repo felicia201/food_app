@@ -405,12 +405,12 @@ p{
         background-color: $lightGreen;
       }
       input[type=text],input[type=password]{
-        width: 350px;
+        width: 30vw;
         height: 25px;
         border-radius: 15px;
         margin-bottom: 15px;
         border: solid 2px black;
-        padding: 0 20px;
+        padding: 0px 20px;
         font-family: $dms-m;
         font-size: $lvl-5;
       }

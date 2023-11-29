@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import { Input } from "./SignUp"
-import Image1 from "/asset/Image1.jpg"
+// import Image1 from "/asset/Image1.jpg"
 import "../Styles/App.scss"
 
 function Change({form, setForm, sendForm, setSent, sent}){
@@ -20,7 +20,7 @@ function Change({form, setForm, sendForm, setSent, sent}){
 function BackgroundImage(){
     return (
         <div className="background">
-            <img src={Image1.src} alt="BackgroundImages" id="background"/>
+            <img src="/asset/Image1.jpg" alt="BackgroundImages" id="background"/>
         </div>
     )
 }
@@ -39,7 +39,6 @@ export default function ResetPassword() {
 
   return (
     <>
-        <header></header>
         <div className="resetpassword">
             {!sent 
             ?
@@ -53,7 +52,6 @@ export default function ResetPassword() {
             </h2>
             }
         </div>
-        <footer></footer>
     </>
   )
 }
