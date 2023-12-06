@@ -59,7 +59,7 @@ async function createMenuForRestaurant(restaurantId, menuDetails) {
             price
         ];
 
-        await pool.query(insertQuery, values);
+        await db.query(insertQuery, values);
         return 'Menu créé avec succès.';
     } catch (error) {
         throw new Error('Erreur lors de la création du menu : ' + error.message);
@@ -94,7 +94,7 @@ async function updateMenuForRestaurantById(restaurantId, menuId, updatedDetails)
             menuId
         ];
 
-        await pool.query(updateQuery, values);
+        await db.query(updateQuery, values);
         return 'Menu mis à jour avec succès.';
     } catch (error) {
         throw new Error('Erreur lors de la mise à jour du menu : ' + error.message);
@@ -109,7 +109,7 @@ async function deleteMenuForRestaurantById(restaurantId, menuId) {
             DELETE FROM menu
             WHERE restaurant_id = ? AND id = ?;
         `;
-        await pool.query(deleteQuery, [restaurantId, menuId]);
+        await db.query(deleteQuery, [restaurantId, menuId]);
         return 'Menu supprimé avec succès.';
     } catch (error) {
         throw new Error('Erreur lors de la suppression du menu : ' + error.message);

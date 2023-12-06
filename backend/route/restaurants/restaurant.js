@@ -9,7 +9,7 @@ const router = new express.Router();
 async function getAllRestaurants() {
     try {
         const selectQuery = `SELECT * FROM restaurants`;
-        const [restaurants] = await pool.query(selectQuery);
+        const [restaurants] = await db.query(selectQuery);
         return restaurants;
     } catch (error) {
         throw new Error('Erreur lors de la récupération des restaurants : ' + error.message);
@@ -50,7 +50,7 @@ async function createRestaurant(restaurantDetails) {
             avis
         ];
 
-        await pool.query(insertQuery, values);
+        await db.query(insertQuery, values);
         return 'Restaurant créé avec succès.';
     } catch (error) {
         throw new Error('Erreur lors de la création du restaurant : ' + error.message);
@@ -94,7 +94,7 @@ async function updateRestaurantById(restaurantId, updatedDetails) {
             restaurantId
         ];
 
-        await pool.query(updateQuery, values);
+        await db.query(updateQuery, values);
         return 'Restaurant mis à jour avec succès.';
     } catch (error) {
         throw new Error('Erreur lors de la mise à jour du restaurant : ' + error.message);
@@ -105,7 +105,7 @@ async function updateRestaurantById(restaurantId, updatedDetails) {
 async function deleteRestaurantById(restaurantId) {
     try {
         const deleteQuery = `DELETE FROM restaurants WHERE id = ?`;
-        await pool.query(deleteQuery, [restaurantId]);
+        await db.query(deleteQuery, [restaurantId]);
         return 'Restaurant supprimé avec succès.';
     } catch (error) {
         throw new Error('Erreur lors de la suppression du restaurant : ' + error.message);
