@@ -67,7 +67,7 @@ html{
 
 .modalities,.reinsurance,.basket{
   width: 100vw;
-  height: 30vh;
+  min-height: 30vh;
 }
 #banner{
   width: 90vw;
@@ -141,6 +141,7 @@ button{
 }
 
 .basket{
+  flex-direction: column;
   > div{
     padding: 20px 0px;
     display: flex;
@@ -156,10 +157,28 @@ button{
       background-color: $orange;
     }
   }
+  .items{
+    border-top: solid 2px $orange;
+    @extend %center;
+  }
+  .item{
+    width: 100%;
+    padding: 20px;
+    font-family: $dms-m;
+    font-size: 1rem;
+    // @extend %center;
+    display: flex;
+    justify-content: space-around;
+    img{
+      cursor: pointer;
+      margin: 0 10px;
+    }
+  }
 }
 
 .menuitem{
   border-radius: 10px;
+  margin: 20px 0;
   box-shadow: 1px 1px 1px 1px #7b7e86;
 }
 
@@ -177,6 +196,7 @@ button{
 .menus{
   display: flex;
   justify-content: space-around;
+  flex-flow: row wrap;
   .top{
     border-radius: 10px 10px 0 0;
   }

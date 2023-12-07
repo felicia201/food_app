@@ -101,8 +101,8 @@ function Modalities({ place }){
     )
 }
 
-function Basket({ numberOfArticles, menu }){
-    const inTheBasket = menu.filter((element) => element.times !== 0)
+function Basket({ numberOfArticles, articles, onMenuItemClicked, onMenuItemClickedToRemove, onRemoveItemFromList, onAddItemToList }){
+    const inTheBasket = articles.filter((element) => element.times !== 0)
     // console.log(menu)
     // console.log(inTheBasket)
     return (
@@ -118,8 +118,24 @@ function Basket({ numberOfArticles, menu }){
             {
             inTheBasket.length !== 0
             &&
-            inTheBasket.map((element) =>
-            <><span>{element.title}</span><span>{element.price}</span></>)
+            <div className="items">
+            {inTheBasket.map((element) =>
+            
+            <div className="item" key={element.title}>
+                    <span>{element.title}</span>
+                    <span>{element.price}</span>
+                    <span>{element.times}</span>
+                    <div className="actions">
+                        <img src="/asset/plusitems.svg" alt="" width="20px" height="20px" onClick={() => {onMenuItemClicked();onAddItemToList(articles,element.title)}}/>
+                        <img src="/asset/minus.svg" alt="" width="20px" height="20px" onClick={() => {onMenuItemClickedToRemove();onRemoveItemFromList(articles,element.title)}}/>
+                    </div>
+                    </div>)
+                
+}            
+                    <div className="total">Total</div>
+                    <button>Valider la commande</button>
+                </div>
+           
             }
         </div>
     )
@@ -142,14 +158,14 @@ function MenuItem({ image, title, ingredients, price, onMenuItemClicked }){
     )
 }
 
-function Menu({ onMenuItemClicked, menuItems }){
+function Menu({ onMenuItemClicked, menuItems, onAddItemToList }){
     
     return(
         <>
         <p className="phrase-menu"><i>Découvrez le menu...</i></p>
         <div className="menus">
             {menuItems.map((element) =>
-            <MenuItem key={element.title} image={element.image} title={element.title} ingredients={element.ingredients} price={element.price} onMenuItemClicked={onMenuItemClicked}/>)}
+            <MenuItem key={element.title} image={element.image} title={element.title} ingredients={element.ingredients} price={element.price} onMenuItemClicked={() => {onMenuItemClicked();onAddItemToList(menuItems, element.title)}}/>)}
         </div>
         </>
     )
@@ -201,37 +217,64 @@ function Reinsurance(){
 }
 
 export default function DetailsOfProducts() {
-    const [menuItemClicked, setMenuItemClicked] = useState(0)
+    // const [menuItemClicked, setMenuItemClicked] = useState(0)
 
     const [menuList, setMenuList] = useState(
-        [
+        [   0,
+            [
             {image: "/asset/Hamburger 2.jpg", title: "Hamburger", ingredients: "Steak, fromage, tomate, salade, tranches de pain, cornichons", price: "17€"},
             {image: "/asset/Hamburger 2.jpg", title: "Hamburger 2", ingredients: "Steak, fromage, tomate, salade, tranches de pain, cornichons", price: "17€"},
             {image: "/asset/Hamburger 2.jpg", title: "Hamburger 3", ingredients: "Steak, fromage, tomate, salade, tranches de pain, cornichons", price: "17€"},
             {image: "/asset/Hamburger 2.jpg", title: "Hamburger 4", ingredients: "Steak, fromage, tomate, salade, tranches de pain, cornichons", price: "17€"}
+            ]
         ])
-    const menu = menuList.map((element) => {return {...element, times: 0}} )
+    
+    useEffect(() => {
+      setMenuList(m => m.map((element,index) => (index === 0) ? element : element.map((element2) => {return {...element2, times: 0}} )))
+    }, [])
+    
+    // console.log(menuList[1])
+    // const menu = menuList.map((element) => {return {...element, times: 0}} )
     
     function handleMenuItemClick(){
-        setMenuItemClicked(m => m + 1)
+        setMenuList(m => m.map((element,index) => (index === 0) ? element + 1 : element))
+    }
+
+    function handleMenuItemClickToRemove(){
+        setMenuList(m => m.map((element,index) => (index === 0) ? element - 1 : element))
     }
 
     function handleAddItemToList(menu, title){
-        setMenuList(menu.filter((element) => {
-            if(element.title === title){
-                return {...element, times: element.times + 1}
-            }
-            return element
-        }))
-        // console.log(title)
+        setMenuList(m => m.map((element,index) => (index === 0) ? element : menu.map((element) => {
+                if(element.title === title){
+                    console.log(element)
+                    return {...element, times: (element.times + 1)}
+                }
+                return element
+                })
+            )
+        )       
     }
+
+    function handleRemoveItemFromList(menu, title){
+        setMenuList(m => m.map((element,index) => (index === 0) ? element : menu.map((element) => {
+                if(element.title === title){
+                    console.log(element)
+                    return {...element, times: (element.times - 1)}
+                }
+                return element
+                })
+            )
+        )       
+    }
+
   return (
     <>
         <div className="detailsofproducts">
             <Details image="/asset/Hamburger.jpg" title="LE COUCHER DE SOLEIL" type="Thaï" city="Paris - 15ème arr." opening="07 H 30" closing="19 H 30" menu={["Aile de poulet", "Cuisse de poulet", "Pilon de poulet"]} min="20€" max="350€" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione saepe voluptate natus vel, exercitationem eveniet blanditiis rem porro, placeat, beatae in necessitatibus repellat itaque. Repellat possimus quisquam quas recusandae sint nemo facere nam voluptatem eveniet, reiciendis, aliquam et ab eum ratione perferendis numquam, quibusdam rem enim. Repudiandae dolor fugiat est."/>
             <Modalities place="9 Avenue du Vieux Duc"/>
-            <Basket numberOfArticles={menuItemClicked} menu={menu}/>
-            <Menu onMenuItemClicked={handleMenuItemClick} menuItems={menu}/>
+            <Menu onMenuItemClicked={handleMenuItemClick} menuItems={menuList[1]} onAddItemToList={handleAddItemToList}/>
+            <Basket numberOfArticles={menuList[0]} articles={menuList[1]} onMenuItemClicked={handleMenuItemClick} onMenuItemClickedToRemove={handleMenuItemClickToRemove} onAddItemToList={handleAddItemToList} onRemoveItemFromList={handleRemoveItemFromList}/>
             <Comments />
             {/* <Images /> */}
             <Reinsurance />
