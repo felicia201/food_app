@@ -125,9 +125,7 @@ function Basket({ numberOfArticles, menu }){
     )
 }
 
-function MenuItem({ image, title, ingredients, price, menuItemClicked, onMenuItemClicked, onAddItemToList, menu }){
-    
-    
+function MenuItem({ image, title, ingredients, price, onMenuItemClicked }){
 
     return(
     <div className="menuitem">
@@ -144,14 +142,14 @@ function MenuItem({ image, title, ingredients, price, menuItemClicked, onMenuIte
     )
 }
 
-function Menu({ onMenuItemClicked, onAddItemToList, menuItems, menuItemClicked }){
+function Menu({ onMenuItemClicked, menuItems }){
     
     return(
         <>
         <p className="phrase-menu"><i>Découvrez le menu...</i></p>
         <div className="menus">
             {menuItems.map((element) =>
-            <MenuItem key={element.title} image={element.image} title={element.title} ingredients={element.ingredients} price={element.price} menuItemClicked={menuItemClicked} onMenuItemClicked={onMenuItemClicked} onAddItemToList={onAddItemToList} menu={menuItems}/>)}
+            <MenuItem key={element.title} image={element.image} title={element.title} ingredients={element.ingredients} price={element.price} onMenuItemClicked={onMenuItemClicked}/>)}
         </div>
         </>
     )
@@ -233,7 +231,7 @@ export default function DetailsOfProducts() {
             <Details image="/asset/Hamburger.jpg" title="LE COUCHER DE SOLEIL" type="Thaï" city="Paris - 15ème arr." opening="07 H 30" closing="19 H 30" menu={["Aile de poulet", "Cuisse de poulet", "Pilon de poulet"]} min="20€" max="350€" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione saepe voluptate natus vel, exercitationem eveniet blanditiis rem porro, placeat, beatae in necessitatibus repellat itaque. Repellat possimus quisquam quas recusandae sint nemo facere nam voluptatem eveniet, reiciendis, aliquam et ab eum ratione perferendis numquam, quibusdam rem enim. Repudiandae dolor fugiat est."/>
             <Modalities place="9 Avenue du Vieux Duc"/>
             <Basket numberOfArticles={menuItemClicked} menu={menu}/>
-            <Menu onMenuItemClicked={handleMenuItemClick} onAddItemToList={handleAddItemToList} menuItems={menu} menuItemClicked={menuItemClicked}/>
+            <Menu onMenuItemClicked={handleMenuItemClick} menuItems={menu}/>
             <Comments />
             {/* <Images /> */}
             <Reinsurance />
