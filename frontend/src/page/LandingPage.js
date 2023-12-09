@@ -2,7 +2,7 @@
 import React from 'react';
 import SearchBar from '../Components/SearchBar';
 // import Carousel from './Components/Carousel';  // Assure-toi d'avoir un composant Carousel
-import '../Styles/landingpage.css'
+import '../Styles/landingpage.css';
 import Navbar from '../Components/layout/navbar/Navbar';
 
 
