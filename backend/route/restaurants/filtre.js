@@ -1,8 +1,6 @@
-// Importez les modules nécessaires
+// Modules nécessaires
 const express = require('express');
 const mysql = require('mysql');
-
-// Créez une instance d'Express
 const app = express();
 
 // Configuration de la base de données
@@ -20,76 +18,54 @@ db.connect((err) => {
     } else {
         console.log('Connecté à la base de données MySQL');
 
-        // Définir la route pour le filtre des restaurants
-        app.get('/restaurants/filter/:budget/:menu/:cuisine/:horaire/:regime', filterRestaurants);
-        app.get('/', (req, res) => {
-            res.send('Bienvenue sur la page d\'accueil');
-        });
-        app.get('/restaurants/search/:query', searchRestaurants);
-        
 
-        // Écoutez le port 3001
-        const PORT = process.env.PORT || 3001;
+        // Écoutez le port 3000
+        const PORT = process.env.PORT || 3000;
         app.listen(PORT, () => {
             console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
         });
     }
 });
 
-function filterRestaurants(req, res) {
-    // Récupérer les paramètres de la requête pour les filtres
-    const budget = req.params.budget || 20; // Valeur par défaut
-    const cuisine = req.params.cuisine || 'default';
-    const regime = req.params.aliments || 'default';
-
-    // Construire la requête SQL en fonction des filtres
-    let sql = `SELECT * FROM menu WHERE price <= ${budget}`;
-
-    if (cuisine !== 'default') {
-        sql += ` AND menu_items = '${cuisine}'`;
+// joel voici la route du filre 
+app.get('/api/restaurants', (req, res) => {
+    // Récupérez les paramètres de requête
+    const { category, regim, openingTime, closingTime } = req.query;
+  
+    //les conditions du filtre 
+    const filterConditions = [];
+    
+    if (category) {
+      filterConditions.push(`category = '${category}'`);
     }
-
-
-    if (regime !== 'default') {
-        sql += ` AND  description = '${aliments}'`;
+  
+    if (regim) {
+      filterConditions.push(`regim = '${regim}'`);
     }
-
-    // Afficher la requête SQL dans la console
-    console.log('Requête SQL générée:', sql);
-
-    // Exécuter la requête SQL
-    db.query(sql, (err, result) => {
-        if (err) {
-            console.error('Erreur de requête SQL :', err);
-            res.status(500).send('Erreur de requête SQL');
-            return;
-        }
-
-        // Répondre avec les résultats au format JSON
-        res.json(result);
+  
+    if (openingTime) {
+      filterConditions.push(`opening_time <= '${openingTime}'`);
+    }
+  
+    if (closingTime) {
+      filterConditions.push(`closing_time >= '${closingTime}'`);
+    }
+  
+    //la requête SQL avec les conditions de filtre
+    let sqlQuery = 'SELECT * FROM restaurants';
+  
+    if (filterConditions.length > 0) {
+      sqlQuery += ` WHERE ${filterConditions.join(' AND ')}`;
+    }
+  
+    // Requête SQL
+    db.query(sqlQuery, (error, results, fields) => {
+      if (error) {
+        return res.status(500).json({ error: 'Erreur lors de l\'exécution de la requête SQL.' });
+      }
+  
+      //les résultats en JSON
+      res.json(results);
     });
-}
-
-
-function searchRestaurants(req, res) {
-    // Récupérer le paramètre de recherche
-    const query = req.params.query;
-
-    // Construire la requête SQL pour la recherche
-    const searchSql = `SELECT * FROM menu WHERE menu_items LIKE '%${query}%' OR description LIKE '%${query}%'`;
-
-    // Afficher la requête SQL dans la console
-    console.log('Requête SQL de recherche générée:', searchSql);
-
-    // Exécuter la requête SQL de recherche
-    db.query(searchSql, (err, result) => {
-        if (err) {
-            console.error('Erreur de requête SQL de recherche :', err);
-            res.status(500).send('Erreur de requête SQL de recherche');
-            return;
-        }
-
-        // Répondre avec les résultats au format JSON
-        res.json(result);
-    });
-}
+  });
+  

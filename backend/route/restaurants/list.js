@@ -6,7 +6,7 @@ const mysql = require('mysql');
 const app = express();
 
 // Configuration de la base de données
-const db = mysql.createConnection({
+const db = mysql.createConnection({ 
     host: 'localhost',
     user: 'root',
     password: '',
@@ -20,7 +20,7 @@ db.connect((err) => {
     } else {
         console.log('Connecté à la base de données MySQL');
 
-        // Définir la route de récupération de la liste des restaurants 
+        //la route de récupération de la liste des restaurants 
         app.get('/', GetRequest);
 
         // Écoutez le port 3000
@@ -31,18 +31,18 @@ db.connect((err) => {
     }
 });
 
-// Exécutez la requête SELECT dans une fonction
+
 function GetRequest(req, res) {
-    // Exécutez la requête SELECT
+    
     db.query('SELECT `name`, `description`, `address`, `avis` FROM `restaurants`', (err, result) => {
         if (err) {
             console.error('Erreur de requête SQL :', err);
-            // Gérer l'erreur de requête SQL
+            
             res.status(500).send('Erreur de requête SQL');
             return;
         }
 
-        // Répondre avec les résultats au format JSON
+        // les résultats au format JSON
         res.json(result);
     });
 }
