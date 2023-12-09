@@ -1,8 +1,8 @@
-// Importez les modules nécessaires
+// les modules nécessaires
 const express = require('express');
 const mysql = require('mysql');
 
-// Créez une instance d'Express
+
 const app = express();
 
 // Configuration de la base de données
@@ -20,16 +20,11 @@ db.connect((err) => {
     } else {
         console.log('Connecté à la base de données MySQL');
 
-        // Définir la route pour le filtre des restaurants
-        app.get('/restaurants/filter/:budget/:menu/:cuisine/:horaire/:regime', filterRestaurants);
-        app.get('/', (req, res) => {
-            res.send('Bienvenue sur la page d\'accueil');
-        });
+        // Route de la recherche
         app.get('/restaurants/search/:query', searchRestaurants);
-        
 
-        // Écoutez le port 3001
-        const PORT = process.env.PORT || 3001;
+        // Écoutez le port 3000
+        const PORT = process.env.PORT || 3000;
         app.listen(PORT, () => {
             console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
         });
@@ -38,23 +33,31 @@ db.connect((err) => {
 
 
 function searchRestaurants(req, res) {
- 
     const query = req.params.query;
 
-    const searchSql = `SELECT * FROM menu WHERE menu_items LIKE '%${query}%' OR description LIKE '%${query}%'`;
+    // requêtes sql
+    const searchSql = `
+    SELECT * 
+    FROM restaurants
+    WHERE name LIKE ? OR description LIKE ? OR menu_item LIKE ?
+`;
 
-    // Afficher la requête SQL dans la console
+// Utilisation du paramètre de recherche pour chaque condition
+const params = [`%${query}%`, `%${query}%`, `%${query}%`];
+
+
+    // Afficher la requête SQL de recherche
     console.log('Requête SQL de recherche générée:', searchSql);
 
-    // Exécuter la requête SQL de recherche
-    db.query(searchSql, (err, result) => {
+    // Exécuter la requête SQL de recherche 
+    db.query(searchSql, params, (err, result) => {
         if (err) {
             console.error('Erreur de requête SQL de recherche :', err);
             res.status(500).send('Erreur de requête SQL de recherche');
             return;
         }
 
-        // Répondre avec les résultats au format JSON
+        // les résultats en JSON
         res.json(result);
     });
 }
