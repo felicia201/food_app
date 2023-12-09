@@ -2,6 +2,8 @@ import React,{ useState } from 'react'
 import { Input } from "./SignUp"
 // import Image1 from "/asset/Image1.jpg"
 import "../Styles/App.scss"
+import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 function Change({form, setForm, sendForm, setSent, sent}){
     return (
@@ -39,6 +41,7 @@ export default function ResetPassword() {
 
   return (
     <>
+    <Navbar/>
         <div className="resetpassword">
             {!sent 
             ?
@@ -52,6 +55,7 @@ export default function ResetPassword() {
             </h2>
             }
         </div>
+        <Footer/>
     </>
   )
 }

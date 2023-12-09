@@ -1,5 +1,7 @@
 import React from 'react'
 import "../Styles/App.scss"
+import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 function Dish({ image, title, price }){
     return (
@@ -32,9 +34,11 @@ export default function RestoCard() {
     const restaurant = "LE COUCHER DE SOLEIL"
   return (
         <div>
+            <Navbar/>
             <p>Bienvenue sur votre espace de gestion {restaurant}</p>
             <button>Ajouter un plat</button>
             <Menus />
+            <Footer/>
         </div>
   )
 }

@@ -3,9 +3,12 @@ import { Input } from "./SignUp.jsx"
 import { OthersMethods } from "./SignUp.jsx"
 // import Image1 from "../../public/asset"
 import "../Styles/App.scss"
+import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 function Connexion({ form, setForm, sendForm }){
     return (
+         <div><Navbar/>
         <div className="container-login">
             <div className="form-login">
                 <form onSubmit={sendForm}>
@@ -20,6 +23,8 @@ function Connexion({ form, setForm, sendForm }){
             </form>
             <OthersMethods />
             </div>
+        </div>
+        <Footer/>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import SearchBar from '../Components/SearchBar';
 // import Carousel from './Components/Carousel';  // Assure-toi d'avoir un composant Carousel
 import '../Styles/landingpage.css';
 import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 
 const LandingPage = () => {
@@ -64,6 +65,7 @@ const LandingPage = () => {
              </div>
               </div> 
         </div>
+        <Footer/>
         </div>
     );
 }
