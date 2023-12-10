@@ -53,20 +53,24 @@ function Filter({ filter, name, values }){
 }
 
 function Filters(){
-    const prix = ["Inférieur à 10€", "Inférieur à 100€", "Inférieur à 250€", "Inférieur à 500€"]
-    const regime = ["Halal", "Végétarien", "Normal"]
-    const cuisine = ["Côtes de porc", "Emincé de poulet", "Soupe aux choux", "Poulet pané"]
+    // const prix = ["Inférieur à 10€", "Inférieur à 100€", "Inférieur à 250€", "Inférieur à 500€"]
+    const opening = ["09 H 00", "10 H 00", "11 H 00"]
+    const closing = ["21 H 00", "22 H 00", "23 H 00"]
+    const regime = ["Halal", "Végétarien", "Casher","Sans gluten", "Végétalien"]
+    const cuisine = ["Italien", "Fast-food", "Japonais", "Boulangerie", "Thaïlandais"]
+    // const cuisine = ["Côtes de porc", "Emincé de poulet", "Soupe aux choux", "Poulet pané"]
     return (
         <div className="filter">
-            <Filter name="prix" filter="Prix" values={prix}/>
             <Filter name="regime" filter="Régime" values={regime}/>
             <Filter name="cuisine" filter="Cuisine" values={cuisine}/>
+            <Filter name="opening" filter="Ouverture" values={opening}/>
+            <Filter name="closing" filter="Fermeture" values={closing}/>
         </div>
         // <img src="./banner" alt="Banner" width="100vw" height="20vh"/>
     )
 }
 
-function Product({ title, minimum, city, image }){
+function Product({ title, image }){
     
     
     return (
@@ -101,29 +105,32 @@ function Product({ title, minimum, city, image }){
         <div className="product">
             <div className="img" style={{backgroundImage: `url("${image}")`, backgroundSize: "cover", backgroundPosition:"center", backgroundRepeat: "no-repeat", width: "250px", height: "150px"}} ></div>
             <span className="titre">{title}</span>
-            <div className="comp">
+            {/* <div className="comp">
                 <span>Min. {minimum}</span>
                 <div className="bullet"></div>
                 <span>{city}</span>
-            </div>
+            </div> */}
         </div>
     </a>
     )
 }
 
-function AllProducts(){
+function AllProducts({ products }){
+    console.log(products)
     return (
         // EN attendant de réaliser le fetch
         <div className="AllProducts">
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
-            <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            {products.map((element) => <Product title={element.name} image="/asset/Hamburger.jpg" key={element.name}/>)}
+            <Product title="Le coucher de soleil" image="/asset/Hamburger.jpg"/>
+            {/* // 
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/>
+            // <Product title="Le coucher de soleil" minimum="10€" city="Montreuil" image="/asset/Hamburger.jpg"/> */}
         </div>
     )
 }
@@ -137,7 +144,7 @@ function Nav(){
 
 export default function Products() {
   
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     
     useEffect(() => {
       fetch("http://localhost:3000/api/restaurants") 
@@ -147,13 +154,13 @@ export default function Products() {
         console.log(res)
       })
     }, [])
-    
+
     return (
     <div>
         <Navbar/>
         <div className="products">
             <Filters />
-            <AllProducts />
+            <AllProducts products={data}/>
             {/* <SpecialOffer />
             <Filters />
             <AllProducts />

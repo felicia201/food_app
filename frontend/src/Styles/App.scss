@@ -613,7 +613,7 @@ p{
 .filter{
   flex-direction: column;
   justify-content: flex-start;
-  height: 100vh;
+  min-height: 100vh;
   max-width: max-content;
   margin-left: 40px;
   // @media screen(max-width: 700px) {
@@ -672,9 +672,9 @@ p{
   display: flex;
   flex-flow: row wrap;
   // flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 40px;
-  align-content: space-between;
+  align-content: flex-start;
   a{
      text-decoration: none;
      color: black;
