@@ -67,6 +67,8 @@ function Filters(){
 }
 
 function Product({ title, minimum, city, image }){
+    
+    
     return (
     // <a href="/details">
     //     <div className="product">
@@ -134,7 +136,19 @@ function Nav(){
 }
 
 export default function Products() {
-  return (
+  
+    const [data, setData] = useState({})
+    
+    useEffect(() => {
+      fetch("http://localhost:3000/api/restaurants") 
+      .then((response) => response.json())
+      .then((res) => {
+        setData(res)
+        console.log(res)
+      })
+    }, [])
+    
+    return (
     <div>
         <Navbar/>
         <div className="products">
