@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 // import Image1 from "../Images/Image1.jpg"
 import "../Styles/App.scss"
+import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 export function Input({ type, id, label, form, setForm}){
 
@@ -95,10 +97,12 @@ export default function LogIn() {
 
   return (
     <>
+    <Navbar/>
         <div className="signup">
             <BackgroundImage />
             <Inscription form={form} setForm={setForm} sendForm={(e) => sendForm(e,form)}/>
         </div>
+        <Footer/>
     </>
   )
 }

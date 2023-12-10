@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 // import Image2 from "/asset/Hamburger 2.jpg"
 // import Localisation from "/asset/localisateur.png"
 import "../Styles/App.scss"
+import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 // function Banner(){
 //     return (
@@ -271,6 +273,7 @@ export default function DetailsOfProducts() {
 
   return (
     <>
+    <Navbar/>
         <div className="detailsofproducts">
             <Details image="/asset/Hamburger.jpg" title="LE COUCHER DE SOLEIL" type="Thaï" city="Paris - 15ème arr." opening="07 H 30" closing="19 H 30" menu={["Aile de poulet", "Cuisse de poulet", "Pilon de poulet"]} min="20€" max="350€" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione saepe voluptate natus vel, exercitationem eveniet blanditiis rem porro, placeat, beatae in necessitatibus repellat itaque. Repellat possimus quisquam quas recusandae sint nemo facere nam voluptatem eveniet, reiciendis, aliquam et ab eum ratione perferendis numquam, quibusdam rem enim. Repudiandae dolor fugiat est."/>
             <Modalities place="9 Avenue du Vieux Duc"/>
@@ -280,6 +283,7 @@ export default function DetailsOfProducts() {
             {/* <Images /> */}
             <Reinsurance />
         </div>
+        <Footer/>
     </>
   )
 }

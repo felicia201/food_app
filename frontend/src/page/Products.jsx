@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 // import Image from "/asset/Hamburger.jpg"
 import "../Styles/App.scss"
+import Navbar from '../Components/layout/navbar/Navbar';
+import Footer from '../Components/layout/footer/Footer';
 
 function InputRadio({ name, value }){
     return(
@@ -134,6 +136,7 @@ function Nav(){
 export default function Products() {
   return (
     <div>
+        <Navbar/>
         <div className="products">
             <Filters />
             <AllProducts />
@@ -142,6 +145,7 @@ export default function Products() {
             <AllProducts />
             <ProductsNav /> */}
         </div>
+        <Footer/>
     </div>
   )
 }
