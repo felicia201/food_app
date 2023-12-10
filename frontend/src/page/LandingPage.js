@@ -1,7 +1,6 @@
 // LandingPage.js
 import React from 'react';
 import SearchBar from '../Components/SearchBar';
-// import Carousel from './Components/Carousel';  // Assure-toi d'avoir un composant Carousel
 import '../Styles/landingpage.css';
 import Navbar from '../Components/layout/navbar/Navbar';
 import Footer from '../Components/layout/footer/Footer';
@@ -58,12 +57,12 @@ const LandingPage = () => {
          </div>
 
         { /* Section 6 */ } 
-        <div className = "section section-6" >
+        {/* <div className = "section section-6" >
         <h2 > Nos partenaires </h2> 
         <div className = "circle-container" >
-             { /* Ajoute ici plusieurs ronds alignés contenant des images */ } 
+               Ajoute ici plusieurs ronds alignés contenant des images 
              </div>
-              </div> 
+              </div>  */}
         </div>
         <Footer/>
         </div>
