@@ -1,8 +1,8 @@
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'password',
-    database: 'mydatabase'
+    password: '',
+    database: 'miam_map'
 });
 
 app.post('/register', (req, res) => {
