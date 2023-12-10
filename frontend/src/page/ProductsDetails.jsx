@@ -94,7 +94,7 @@ function Modalities({ place }){
                 </div>
                 <div className="bottom">
                     <button>Faire une réservation</button>
-                    <button>Effectuer une commande</button>
+                    <a href="#menu"><button>Effectuer une commande</button></a>
                 </div>
             </div>
         </div>
@@ -102,6 +102,7 @@ function Modalities({ place }){
 }
 
 function Basket({ numberOfArticles, articles, onMenuItemClicked, onMenuItemClickedToRemove, onRemoveItemFromList, onAddItemToList }){
+    const [clicked, setClicked] = useState(false)
     const inTheBasket = articles.filter((element) => element.times !== 0)
     // console.log(menu)
     // console.log(inTheBasket)
@@ -112,11 +113,11 @@ function Basket({ numberOfArticles, articles, onMenuItemClicked, onMenuItemClick
                     <img src="/asset/cart.svg" alt="alt" width="55px" height="55px"/>
                 </div>
                 <div className="bottom">
-                    <button>Afficher le panier({numberOfArticles})</button>
+                    <button onClick={() => setClicked(!clicked)}>{clicked ? "Masquer" : "Afficher"} le panier({numberOfArticles})</button>
                 </div>
             </div>
             {
-            inTheBasket.length !== 0
+            (inTheBasket.length !== 0 && clicked) 
             &&
             <div className="items">
             {inTheBasket.map((element) =>
@@ -163,7 +164,7 @@ function Menu({ onMenuItemClicked, menuItems, onAddItemToList }){
     return(
         <>
         <p className="phrase-menu"><i>Découvrez le menu...</i></p>
-        <div className="menus">
+        <div className="menus" id="menu">
             {menuItems.map((element) =>
             <MenuItem key={element.title} image={element.image} title={element.title} ingredients={element.ingredients} price={element.price} onMenuItemClicked={() => {onMenuItemClicked();onAddItemToList(menuItems, element.title)}}/>)}
         </div>
