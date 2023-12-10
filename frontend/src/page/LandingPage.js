@@ -22,8 +22,8 @@ const LandingPage = () => {
 
         { /* Section 2 */ }
          <div className = "section section-2" >
-        <h2 > Pizza, Thaï, Burger, Pattes...tout à porter de miam! </h2> 
-        <p> Découvrez MiamApp, pour manger bien, en un rien de temps!
+        <h2 > "Pizza, Thaï, Burger, Pattes...tout à porter de miam !" </h2> 
+        <p> Découvrez MiamApp, pour manger bien, en un rien de temps !
         Réserve sur place ou commande à emporter, et gagne du temps sur tes pauses déjeuner </p> 
         </div>
 
@@ -37,7 +37,7 @@ const LandingPage = () => {
         <div className = "background-image" >
              { /* Image de fond */ } 
              </div>
-              <p > Découvrez nos offres du moment </p>
+              <p > Découvrez nos offres du moment !</p>
                </div>
 
         { /* Section 5 */ } 
@@ -45,11 +45,11 @@ const LandingPage = () => {
         <h2> Devenir Partenaires </h2>
          <div className = "cards-container" >
              { /* Card 1 */ }
-              <div className = "card" >
+              <div className = "card-1" >
         <h3 > Restaurant </h3>
          <p > Vous souhaitez plus de clients à vos tables ? </p>
           </div> { /* Card 2 */ }
-           <div className = "card" >
+           <div className = "card-2" >
         <h3 > Entreprises </h3> 
         <p > Envie de faciliter ses salariés ? </p>
          </div> 

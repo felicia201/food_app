@@ -14,7 +14,7 @@
   --darkGreen : #30733E;
   --lightOrange : #DEA368;
   --orange : #CB7C2D;
-  --darkOrange : #A76625;
+  --darkOrange : #804408;
   --lightred : #DE5454;
   --red : #CB2727;
   --darkred : #9A1D1D;
@@ -28,8 +28,8 @@ footer {
     display: flex;
     justify-content: space-around;
     padding: 50px;
-    background-color: var(--darkOrange);
-    color: rgb(255, 255, 255);
+    background-color: white;
+    color: var(--darkred);
     width: 100vw;
   }
   
@@ -60,7 +60,7 @@ footer {
   
   a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: var(--darkred);
   }
   
   .social-icons {

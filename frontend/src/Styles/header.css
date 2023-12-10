@@ -51,30 +51,30 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	background-color: white; /* Changement du fond en blanc */
-	color: var(--textColor);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Effet ombré */
+	background-color: white; 
+	color: var(--darkred);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 	position: fixed;
-	width: 100%;
+	width: 100vw;
 	top: 0;
 	z-index: 1000;
-	transition: background-color 0.5s ease; /* Animation de transition de couleur */
+	transition: background-color 0.5s ease; 
 }
 
 header.scrolled {
-	background-color: white; /* Couleur de fond en scroll */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Effet ombré en scroll */
+	background-color: white; 
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
 	margin: 0 1rem;
-	color: var(--textColor);
+	color: var(--darkred);
 	text-decoration: none;
 	font-family: 'PoliceTitre';
 }
 
 nav a:hover {
-	color: var(--secondaryColor);
+	color: var(--darkred);
 }
 
 header .nav-btn {

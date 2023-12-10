@@ -53,11 +53,13 @@
   .search-bar select,
   .search-bar button {
     padding: 8px;
-    border: 1px solid #010101;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     cursor: pointer;
     background-color:var(--lightGreen);
     font-family: 'PoliceContenu';
+    color: white;
+    font-size: 20px;
 
   }
   

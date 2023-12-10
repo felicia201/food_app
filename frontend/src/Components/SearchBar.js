@@ -17,7 +17,7 @@ const SearchBar = () => {
     <div className="search-bar">
       <input
         type="text"
-        placeholder="Rechercher un restaurant, une spécialité un lieu..."
+        placeholder="Quel restaurant allez-vous choisir aujourd'hui...?"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
