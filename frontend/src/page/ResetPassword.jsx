@@ -1,6 +1,5 @@
 import React,{ useState } from 'react'
 import { Input } from "./SignUp"
-// import Image1 from "/asset/Image1.jpg"
 import "../Styles/App.scss"
 import Navbar from '../Components/layout/navbar/Navbar';
 import Footer from '../Components/layout/footer/Footer';
@@ -12,7 +11,7 @@ function Change({form, setForm, sendForm, setSent, sent}){
                 <form onSubmit={sendForm}>
                     <div className="title">MOT DE PASSE OUBLIE</div>
                     <Input type="text" id="email" label="Entrez une adresse mail de récupération" form={form} setForm={setForm}/>
-                    <input type="submit" value="Envoyer" onClick={() => setSent(!sent)}/>
+                    <input type="submit" value="Envoyer"/>
                 </form>
             </div>
         </div>

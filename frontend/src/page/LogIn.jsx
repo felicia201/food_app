@@ -8,7 +8,6 @@ import Footer from '../Components/layout/footer/Footer';
 
 function Connexion({ form, setForm, sendForm }){
     return (
-         <div><Navbar/>
         <div className="container-login">
             <div className="form-login">
                 <form onSubmit={sendForm}>
@@ -23,8 +22,6 @@ function Connexion({ form, setForm, sendForm }){
             </form>
             <OthersMethods />
             </div>
-        </div>
-        <Footer/>
         </div>
     )
 }
@@ -51,8 +48,10 @@ export default function LogIn() {
   return (
     <>
         <div className="login">
+            <Navbar/>
             <BackgroundImage />
             <Connexion form={form} setForm={setForm} sendForm={(e) => sendForm(e,form)} />
+            <Footer/>
         </div>
     </>
   )

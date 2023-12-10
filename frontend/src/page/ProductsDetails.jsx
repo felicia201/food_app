@@ -91,7 +91,7 @@ function Modalities({ place }){
         <div className="modalities" style={{backgroundImage: `url("/asset/Image2.jpg")`, backgroundSize: "cover", backgroundPosition:"center", backgroundRepeat: "no-repeat"}}>
             <div>
                 <div className="top">
-                    <span><img src="/asset/localisateur.png" alt="alt" width="25px" height="25px"/> {place}</span>
+                    <span><img src="/asset/location.svg" alt="alt" width="25px" height="25px"/> {place}</span>
                     {/* <button>Enregistrer</button> */}
                 </div>
                 <div className="bottom">
@@ -212,12 +212,12 @@ function Comments(){
 //     )
 // }
 
-function Reinsurance(){
-    return (
-        <div className="reinsurance"></div>
-        // <img src="./banner" alt="Banner" width="100vw" height="20vh"/>
-    )
-}
+// function Reinsurance(){
+//     return (
+//         <div className="reinsurance"></div>
+//         // <img src="./banner" alt="Banner" width="100vw" height="20vh"/>
+//     )
+// }
 
 export default function DetailsOfProducts() {
     // const [menuItemClicked, setMenuItemClicked] = useState(0)
@@ -281,9 +281,8 @@ export default function DetailsOfProducts() {
             <Basket numberOfArticles={menuList[0]} articles={menuList[1]} onMenuItemClicked={handleMenuItemClick} onMenuItemClickedToRemove={handleMenuItemClickToRemove} onAddItemToList={handleAddItemToList} onRemoveItemFromList={handleRemoveItemFromList}/>
             <Comments />
             {/* <Images /> */}
-            <Reinsurance />
         </div>
-        <Footer/>
+    <Footer/>
     </>
   )
 }

@@ -540,6 +540,7 @@ p{
       }
       input[type=text],input[type=password]{
         width: 30vw;
+        min-width: 350px;
         height: 25px;
         border-radius: 15px;
         margin-bottom: 15px;
@@ -628,8 +629,7 @@ p{
     color: $green;
     margin: 10px;
     // border-radius: 20px;
-    width: 100%;
-    max-width: 250px;
+    width: 250px;
     height:40px;
     @extend %center;
     font-family: $dms-r;
@@ -689,6 +689,8 @@ p{
 }
 
 html,body{
+  position: absolute;
+  z-index: -1;
   height: 100vh;
   width: 100vh;
   margin: 0;
